@@ -1,0 +1,21 @@
+(set-logic QF_SLIA)
+
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+
+(assert (>= (str.to_int x) 0))
+(assert (>= (str.len x) 10))
+(assert (>= (str.to_int y) 0))
+(assert (>= (str.len y) 10))
+(assert (>= (str.to_int z) 0))
+(assert (>= (str.len z) 10))
+
+(assert (str.in_re x (re.++ (re.+ (str.to_re "197")) (re.union (str.to_re "5") (re.range "4" "6")))))
+(assert (str.in_re y (re.* (re.++ (str.to_re "95") (re.union (str.to_re "51") (str.to_re "918"))))))
+(assert (str.in_re z (re.++ (re.union (re.+ (str.to_re "2")) (str.to_re "817")) (str.to_re "899"))))
+
+(assert (< (+ (* (- 2) (str.len x)) (str.len y) (* 9 (str.len z)) (* 9 (str.to_int x))) 40))
+(assert (<= (+ (* (- 9) (str.len x)) (* 4 (str.len y)) (* 3 (str.len z))) 76))
+
+(check-sat)
