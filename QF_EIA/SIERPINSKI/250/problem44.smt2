@@ -1,0 +1,6 @@
+(set-logic ALL)
+(declare-fun x () Int)
+(assert (>= x 1000))
+(assert (= (mod (+ 1 (exp 2 (exp 2 x))) 10) 7))
+(check-sat)
+(get-model)
