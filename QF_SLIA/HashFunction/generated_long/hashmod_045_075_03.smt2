@@ -1,0 +1,8 @@
+(set-logic QF_SLIA)
+(set-option :produce-models true)
+(declare-fun x () String)
+(assert (str.in_re x (re.++ (re.* (re.union (re.union (re.range "6" "9") (re.range "2" "9")) (str.to_re "0000"))) (str.to_re "11"))))
+(assert (= (mod (mod (str.to_int x) 75) 34) 13))
+(assert (> (str.len x) 100))
+(check-sat)
+(get-model)
