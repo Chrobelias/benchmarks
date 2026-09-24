@@ -3,7 +3,7 @@
 ; x(n) = a * x(n-1)
 ; Solution: x(n) = a^n * x(0)
 
-(set-logic QF_EIA)
+(set-logic ALL)
 (set-option :produce-models true)
 (declare-fun x0 () Int)
 (declare-fun n () Int)
@@ -12,8 +12,8 @@
 (assert (> n 0))
 (assert (distinct a 0))
 (assert (distinct
-  (* (** a n) x0)
-  (* a (* (** a (- n 1)) x0))
+  (* (exp a n) x0)
+  (* a (* (exp a (- n 1)) x0))
 ))
 
 (check-sat)

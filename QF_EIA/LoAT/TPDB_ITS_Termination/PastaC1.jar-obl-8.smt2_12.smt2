@@ -1,5 +1,5 @@
 (set-info :status unsat) ; swine result
-(set-logic QF_EIA)
+(set-logic ALL)
 (declare-fun it4 () Int)
 (declare-fun i1 () Int)
 (declare-fun it13 () Int)
@@ -25,7 +25,7 @@
 (assert (= (+ (* it14 (- 1)) it30 it32) 0))
 (assert (= (+ it33 (- 1)) 0))
 (assert (let ((a!1 (+ (+ 0 it32)
-              (* (+ 0 it33) (** 2 (+ it20 (- 1))) (+ 0 (- 1))))))
+              (* (+ 0 it33) (exp 2 (+ it20 (- 1))) (+ 0 (- 1))))))
   (and (>= (+ it31 (- 3)) 0)
        (>= (+ (* it31 (- 1)) 3) 0)
        (> a!1 (+ 0 0))

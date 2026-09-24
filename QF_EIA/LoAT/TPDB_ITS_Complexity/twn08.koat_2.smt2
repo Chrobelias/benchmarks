@@ -1,5 +1,5 @@
 (set-info :status sat) ; swine result
-(set-logic QF_EIA)
+(set-logic ALL)
 (declare-fun i1 () Int)
 (declare-fun it6 () Int)
 (declare-fun i2 () Int)
@@ -53,11 +53,11 @@
 (assert (= (+ (* it263 (- 1)) it277) 0))
 (assert (= (+ (* it264 (- 1)) it278) 0))
 (assert (= (+ it279 (* it265 (- 1))) 0))
-(assert (let ((a!1 (* (** (** 2 (+ it256 (- 1))) (+ 0 2)) (** it278 2) (+ 0 4))))
+(assert (let ((a!1 (* (exp (exp 2 (+ it256 (- 1))) (+ 0 2)) (exp it278 2) (+ 0 4))))
 (let ((a!2 (+ a!1
-              (* (** 5 (+ it256 (- 1))) (+ 0 it277) (+ 0 (- 4)))
-              (* (** 5 (+ it256 (- 1))) (** it279 2) (+ 0 (- 1)))
-              (** it279 2))))
+              (* (exp 5 (+ it256 (- 1))) (+ 0 it277) (+ 0 (- 4)))
+              (* (exp 5 (+ it256 (- 1))) (exp it279 2) (+ 0 (- 1)))
+              (exp it279 2))))
   (and (> a!2 (+ 0 0))
        (> it277 0)
        (>= (+ (* it273 (- 1)) 4) 0)
