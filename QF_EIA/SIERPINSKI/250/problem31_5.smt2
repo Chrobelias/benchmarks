@@ -1,6 +1,6 @@
-(set-logic QF_EIA)
+(set-logic ALL)
 (declare-fun x () Int)
 (assert (>= x 1000))
-(assert (= (mod (+ (- 3) (** 2 x)) 5) 0))
+(assert (= (mod (+ (- 3) (exp 2 x)) 5) 0))
 (check-sat)
 (get-model)

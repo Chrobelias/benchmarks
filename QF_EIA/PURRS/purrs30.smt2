@@ -2,7 +2,7 @@
 ; x(n) = x(n-1) + 1 / (n*(n+1)*(n+2))+a^n
 ; Solution: x(n) = -1+(1-a)^(-1)+(8+4*n^2+12*n)^(-1)*n^2+3*(8+4*n^2+12*n)^(-1)*n-(1-a)^(-1)*a^(1+n)+x(0)
 
-(set-logic QF_EIA)
+(set-logic ALL)
 (set-option :produce-models true)
 (declare-fun x0 () Int)
 (declare-fun n () Int)
@@ -25,7 +25,7 @@
     )
     (- (*
       (/ 1 (- 1 a))
-      (** a (+ 1 n))
+      (exp a (+ 1 n))
     ))
     x0
   )
@@ -43,10 +43,10 @@
     )
     (- (*
       (/ 1 (- 1 a))
-      (** a (+ 1 (- n 1)))
+      (exp a (+ 1 (- n 1)))
     ))
     x0
-  ) (/ 1 (* n (+ n 1) (+ n 2))) (** a n))
+  ) (/ 1 (* n (+ n 1) (+ n 2))) (exp a n))
 ))
 
 (check-sat)

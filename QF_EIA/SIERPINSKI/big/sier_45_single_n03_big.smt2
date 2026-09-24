@@ -1,4 +1,4 @@
-(set-logic QF_EIA)
+(set-logic ALL)
 
 (declare-const x Int)
 
