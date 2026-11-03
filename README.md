@@ -1,6 +1,6 @@
-# ChrobELIAS Benchmarks
+# Chrobelias Benchmarks
 
-This repository contains benchmark suites developed & used to analyze [ChrobELIAS](https://github.com/Chrobelias/Chrobelias)
+This repository contains benchmark suites developed & used to analyze [Chrobelias](https://github.com/Chrobelias/Chrobelias)
 performance.
 
 # Acknowledgments
